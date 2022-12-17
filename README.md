@@ -1,6 +1,7 @@
 # <nail>
 
 ## サイト概要
+
 ### サイトテーマ
 ネイル予約サイト
 
@@ -15,6 +16,9 @@ InstagramやLINEで予約をとっているが、顧客情報の管理や予約�
 
 ## 設計書
 <...>
+
+##実装機能リスト
+https://docs.google.com/spreadsheets/d/1TLqZjZALjYiWJVuHsgpv_ZxmGZW-kqSOvtxvySoR3Y8/edit?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
