@@ -1,9 +1,9 @@
-# <nail>
+##アプリケーション名
+「nail」
 
 ## サイト概要
-実装機能リスト
 
-https://docs.google.com/spreadsheets/d/1TLqZjZALjYiWJVuHsgpv_ZxmGZW-kqSOvtxvySoR3Y8/edit?usp=sharing
+ネイルを行いたい方に対してネイルサロンの予約できるアプリケーションになります。  架空の店舗に対するサービスになります。
 
 ### サイトテーマ
 ネイル予約サイト
@@ -18,7 +18,11 @@ InstagramやLINEで予約をとっているが、顧客情報の管理や予約�
 ユーザーの予約の管理をする時、ネイルの写真を投稿する時
 
 ## 設計書
-<...>
+実装機能リスト
+
+https://docs.google.com/spreadsheets/d/1TLqZjZALjYiWJVuHsgpv_ZxmGZW-kqSOvtxvySoR3Y8/edit?usp=sharing
+
+
 
 ## 開発環境
 - OS：Linux(CentOS)
