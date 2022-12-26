@@ -12,7 +12,11 @@
 
   <body>
     <header>
-    <% if customer_signed_in? %>
+    <% if admin_signed_in? %>
+      <li>
+        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+      </li>
+    <% elsif customer_signed_in? %>
       <li>
         <%= link_to "マイページ", my_page_path(current_customer) %>
       </li>
