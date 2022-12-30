@@ -1,0 +1,22 @@
+<table class="admin_menus has_border">
+	<thead>
+		<tr>
+			<th>メニューID</th>
+			<th>メニュー名</th>
+			<th>メニュー説明文</th>
+			<th>税抜価格</th>
+			<th>コース</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @menus.each do |menu| %>
+			<tr>
+				<td class="text-center"><%= menu.id %></td>
+				<td><%= link_to menu.name, admin_menu_path(menu) %></td>
+				<td><%= menu.introduction %></td>
+				<td class="text-center"><%= menu.price %>円</td>
+				<td><%= menu.course %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
