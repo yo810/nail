@@ -1,4 +1,5 @@
 class Admin::MenusController < ApplicationController
+
   def index
     @menus = Menu.all
   end
@@ -21,6 +22,12 @@ class Admin::MenusController < ApplicationController
   end
 
   def update
+    @menu = Menu.find(params[:id])
+    if @menu.update(menu_params)
+       redirect_to admin_menu_path(@menu.id)
+    else
+       render :edit
+    end
   end
 
   private
