@@ -1,0 +1,16 @@
+<table class="admin_photos has_border">
+	<thead>
+		<tr>
+			<th>フォトID</th>
+			<th>フォト名</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @photos.each do |photo| %>
+			<tr>
+				<td class="text-center"><%= photo.id %></td>
+				<td><%= link_to photo.name, admin_photo_path(photo) %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -1,0 +1,27 @@
+<div class="container">
+	<h2>フォト詳細</h2>
+	<div class="flex">
+		<div>
+			<div class="image_field">
+				<%= image_tag @photo.get_image, size: "200x200", class: "admin_menu_image" %>
+			</div>
+		</div>
+		<table class="admin_photo_info">
+			<thead>
+				<tr>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>フォト名</td>
+					<td><%= @photo.name %></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="flex align-center pl5">
+			<%= link_to "編集する", edit_admin_photo_path(@photo), class: "btn btn-success" %>
+		</div>
+	</div>
+</div>
