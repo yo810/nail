@@ -33,6 +33,9 @@
       </li>
     <% elsif customer_signed_in? %>
       <li>
+        <%= link_to "メニュー一覧", menus_path %>
+      </li>
+      <li>
         <%= link_to "マイページ", my_page_path(current_customer) %>
       </li>
       <li>

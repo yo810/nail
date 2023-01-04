@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
 
-
   #顧客用
   devise_for :customers, skip: [:passwords], controllers: {
   registrations: "public/registrations",
@@ -17,6 +16,7 @@ Rails.application.routes.draw do
     get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
 
+    resources :menus, only: [:index, :show]
   end
 
   #管理者用

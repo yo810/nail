@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="content">
+	<h2 class="section-ttl">メニュー一覧</h2>
+
+	<div class="items">
+	  <% @menus.each do |menu| %>
+		<%= link_to menu_path(menu) do %>
+		  <%= image_tag menu.get_image, size: "200x200", format: "jpeg", fallback: "no-image.png" %>
+		<% end %>
+		  <p><%= menu.name %></p>
+		  <p><%= menu.with_tax_price %>円</p>
+		  <p><%= menu.course %></p>
+	  <% end %>
+	</div>
+	<%= paginate @menus %>
+  </div>
+</div>

@@ -10,4 +10,8 @@ class Menu < ApplicationRecord
     image
   end
 
+  def with_tax_price
+    (price * 1.1).ceil
+  end
+
 end
