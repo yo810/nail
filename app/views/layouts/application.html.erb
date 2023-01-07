@@ -33,6 +33,9 @@
       </li>
     <% elsif customer_signed_in? %>
       <li>
+        <%= link_to "フォト一覧", photos_path %>
+      </li>
+      <li>
         <%= link_to "メニュー一覧", menus_path %>
       </li>
       <li>

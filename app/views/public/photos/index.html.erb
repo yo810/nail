@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="content">
+	<h2 class="section-ttl">フォト一覧</h2>
+
+	<div class="items">
+	  <% @photos.each do |photo| %>
+		<%= link_to photo_path(photo) do %>
+		  <%= image_tag photo.get_image, size: "200x200", format: "jpeg", fallback: "no-image.png" %>
+		<% end %>
+		  <p><%= photo.name %></p>
+	  <% end %>
+	</div>
+	<%= paginate @photos %>
+  </div>
+</div>

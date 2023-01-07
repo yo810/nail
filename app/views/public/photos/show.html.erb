@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="content">
+	<h2 class="section-ttl"><%= @photos.name %>詳細</h2>
+	<div class="flex">
+	  <%= image_tag @photos.get_image, size: "200x200", class: "item_image" %>
+		<div class="item_info">
+		  <div>
+		    <%= @photos.name %>
+	    <div>
+	  </div>
+	  <% if @photos.favorited_by?(current_customer) %>
+    <p>
+      <%= link_to photo_favorites_path(@photos), method: :delete do %>
+        ♥<%= @photos.favorites.count %> いいね
+      <% end %>
+    </p>
+    <% else %>
+    <p>
+      <%= link_to photo_favorites_path(@photos), method: :post do %>
+        ♡<%= @photos.favorites.count %> いいね
+      <% end %>
+    </p>
+  <% end %>
+  </div>
+</div>

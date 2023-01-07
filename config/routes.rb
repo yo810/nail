@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  namespace :public do
+    get 'photos/index'
+    get 'photos/show'
+  end
   #顧客用
   devise_for :customers, skip: [:passwords], controllers: {
   registrations: "public/registrations",
@@ -17,6 +21,9 @@ Rails.application.routes.draw do
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
 
     resources :menus, only: [:index, :show]
+    resources :photos, only: [:index, :show] do
+    resource :favorites, only: [:create, :destroy]
+  end
   end
 
   #管理者用

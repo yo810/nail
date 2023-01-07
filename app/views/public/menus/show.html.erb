@@ -1,17 +1,16 @@
 <div class="container">
-
-	<div class="content">
-		<h2 class="section-ttl"><%= @menus.name %></h2>
-		<div class="flex">
-			<%= image_tag @menus.get_image, size: "200x200", class: "item_image" %>
-			<div class="item_info">
-				<h4><%= @menus.introduction %></h4>
-			</div>
-			<div>
-			  <%= @menus.with_tax_price %>円
-			<div>
-			  <%= @menus.course %>
-			</div>
+  <div class="content">
+	<h2 class="section-ttl"><%= @menus.name %></h2>
+	<div class="flex">
+	  <%= image_tag @menus.get_image, size: "200x200", class: "item_image" %>
+		<div class="item_info">
+		  <h4><%= @menus.introduction %></h4>
+		</div>
+		<div>
+		  <%= @menus.with_tax_price %>円
+		<div>
+		  <%= @menus.course %>
 		</div>
 	</div>
+  </div>
 </div>
