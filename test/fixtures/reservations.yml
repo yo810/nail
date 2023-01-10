@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_id: 1
+  day: 2023-01-10
+  time: MyString
+  strat_time: 2023-01-10 00:56:53
+  memo: MyText
+  cancel: 2023-01-10
+  status: 1
+
+two:
+  customer_id: 1
+  day: 2023-01-10
+  time: MyString
+  strat_time: 2023-01-10 00:56:53
+  memo: MyText
+  cancel: 2023-01-10
+  status: 1

@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
 
 
-  namespace :public do
-    get 'photos/index'
-    get 'photos/show'
-  end
+
   #顧客用
   devise_for :customers, skip: [:passwords], controllers: {
   registrations: "public/registrations",
@@ -24,6 +21,7 @@ Rails.application.routes.draw do
     resources :photos, only: [:index, :show] do
     resource :favorites, only: [:create, :destroy]
   end
+    resources :reservations, only: [:new, :confirm, :create, :destroy]
   end
 
   #管理者用
