@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 
   #顧客用
-  devise_for :customers, skip: [:passwords], controllers: {
+  devise_for :customers, controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
   }
@@ -19,8 +19,8 @@ Rails.application.routes.draw do
 
     resources :menus, only: [:index, :show]
     resources :photos, only: [:index, :show] do
-    resource :favorites, only: [:create, :destroy]
-  end
+      resource :favorites, only: [:create, :destroy]
+    end
     resources :reservations, only: [:new, :confirm, :create, :destroy]
   end
 
