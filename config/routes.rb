@@ -17,11 +17,14 @@ Rails.application.routes.draw do
     get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
 
-    resources :menus, only: [:index, :show]
+    resources :menus, only: [:index, :show] do
+      resources :reservations, only: [:new, :create, :destroy]
+      get '/reservations/confirm' => 'reservations#confirm', as: 'confirm'
+    end
     resources :photos, only: [:index, :show] do
       resource :favorites, only: [:create, :destroy]
     end
-    resources :reservations, only: [:new, :confirm, :create, :destroy]
+
   end
 
   #管理者用

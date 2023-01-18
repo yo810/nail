@@ -4,16 +4,18 @@ class Public::ReservationsController < ApplicationController
     @day = params[:day]
     @time = params[:time]
     @start_time = DateTime.parse(@day + " " + @time + " " + "JST")
+    @menu = Menu.find(params[:menu_id])
   end
 
   def confirm
-    @reservation = Reservation.find(params[:id])
+    @reservation = Reservation.find(params[:menu_id])
+    @menu = Menu.find(params[:menu_id])
   end
-  
+
   def create
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
-      redirect_to reservation_path @reservation.id
+      redirect_to menu_confirm_path(params[:menu_id])
     else
       render :new
     end
