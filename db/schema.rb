@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 2023_01_10_005653) do
     t.integer "customer_id"
     t.date "day"
     t.string "time"
-    t.datetime "strat_time"
+    t.datetime "start_time"
     t.text "memo"
     t.date "cancel"
     t.integer "status"

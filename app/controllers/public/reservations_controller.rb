@@ -24,7 +24,7 @@ class Public::ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:customer_id, :day, :time, :strat_time, :memo, :cancel, :status)
+    params.require(:reservation).permit(:customer_id, :day, :time, :start_time, :memo, :cancel, :status)
   end
 
 end

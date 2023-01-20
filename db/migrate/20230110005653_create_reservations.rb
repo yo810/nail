@@ -4,7 +4,7 @@ class CreateReservations < ActiveRecord::Migration[6.1]
       t.integer :customer_id
       t.date :day
       t.string :time
-      t.datetime :strat_time
+      t.datetime :start_time
       t.text :memo
       t.date :cancel
       t.integer :status
