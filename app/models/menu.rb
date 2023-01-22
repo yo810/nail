@@ -1,6 +1,7 @@
 class Menu < ApplicationRecord
 
   has_one_attached :image
+  has_many :reservations, dependent: :destroy
 
   def get_image
     unless image.attached?

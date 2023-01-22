@@ -18,8 +18,9 @@ Rails.application.routes.draw do
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
 
     resources :menus, only: [:index, :show] do
-      resources :reservations, only: [:new, :create, :destroy]
+      resources :reservations, only: [:new, :create]
       get '/reservations/confirm' => 'reservations#confirm', as: 'confirm'
+      delete '/reservations/destroy' => 'reservations#destroy', as: 'destroy_reservation'
     end
     resources :photos, only: [:index, :show] do
       resource :favorites, only: [:create, :destroy]

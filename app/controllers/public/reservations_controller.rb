@@ -20,6 +20,16 @@ class Public::ReservationsController < ApplicationController
       render :new
     end
   end
+  
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    if @reservation.destroy
+      flash[:success] = "予約を削除しました。"
+      redirect_to my_page_path(current_customer.id)
+    else
+      render :show
+    end
+  end
 
   private
 

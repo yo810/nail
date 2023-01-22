@@ -5,6 +5,7 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :favorites, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 
   def full_name
     last_name + " " + first_name

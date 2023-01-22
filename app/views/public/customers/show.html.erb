@@ -37,5 +37,34 @@
         </table>
       </div>
 
+      <div class="col-12 mt-3 text-center mx-auto">
+        <h3>予約一覧</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">予約日</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @customer_reservations.each do |customer_reservation| %>
+              <td>
+                <%= customer_reservation.day %>
+                <%= customer_reservation.time %>
+              </td>
+              <td>
+                <%= link_to '削除', menu_destroy_reservation_path(customer_reservation.id), method: :delete, data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %>
+              </td>
+            </tr>
+            <% end %>
+            <% if @customer_reservations.blank? %>
+              <tr>
+                <td>予約はありません。</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
 
 </div>

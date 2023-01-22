@@ -3,6 +3,7 @@ class Public::CustomersController < ApplicationController
 
   def show
     @customer = current_customer
+    @customer_reservations = current_customer.reservations.where("start_time >= ?", DateTime.current).order(day: :desc)
   end
 
   def edit
