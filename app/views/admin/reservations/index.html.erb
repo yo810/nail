@@ -1,0 +1,30 @@
+<section class="inner">
+	<h2 class="section-ttl">
+		<% if params[:customer_id] %>
+			<%= @customer.full_name %>さんの注文履歴一覧
+		<% elsif params[:created_at] == "today" %>
+			本日の予約履歴一覧
+		<% else %>
+			予約履歴一覧
+		<% end %>
+	</h2>
+	<table class="admin_reservations has_border">
+		<thead>
+			<tr>
+				<th>予約受付日</th>
+				<th>予約者</th>
+				<th>予約日時</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @reservations.each do |reservation| %>
+				<tr>
+					<td><%= link_to reservation.created_at.strftime("%Y/%m/%d %H:%M:%S"), admin_menu_reservation_path(@menu), class: "underline" %></td>
+					<td><%= link_to reservation.customer.full_name, admin_customer_path(reservation.customer) %></td>
+					<td><%= reservation.day %></td>
+					<td><%= reservation.time %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</section>

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   #顧客用
   devise_for :customers, controllers: {
   registrations: "public/registrations",
@@ -34,7 +32,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'top' => 'homes#top', as: 'top'
-    resources :menus, except: [:destroy]
+    resources :menus, except: [:destroy] do
+      resources :reservations, only: [:index, :show, :update]
+    end
     resources :photos, except: [:destroy]
     resources :customers, only: [:index, :show, :edit, :update]
   end
