@@ -14,4 +14,24 @@
  *= require_self
  */
 
- *= require simple_calendar
+.body {
+  background-color: #FFEFD5;
+  background-image: url("laura-chouette-8WlM9twbNJA-unsplash");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+main {
+  padding: 180px 0;
+}
+
+.title {
+  text-align: center;
+}
+
+footer {
+  padding: 15px 0;
+  font-size: 14px;
+  text-align: center;
+}

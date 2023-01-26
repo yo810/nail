@@ -12,7 +12,12 @@ class Admin::ReservationsController < ApplicationController
   end
 
   def show
+    # 途中
     @reservations = @includes(:menu)
     @customer = @reservation.customer
+  end
+
+  def reservation_params
+    params.require(:reservation).permit(:customer_id, :day, :time, :start_time, :memo, :cancel, :status, :menu_id)
   end
 end
