@@ -1,26 +1,29 @@
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <div class="container">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <h2>Log in</h2>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="row justify-content-center">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="row mx-auto mb-3">
+          <%= f.label :email, class: "col-3" %><br />
+          <div class="col-6">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+          </div>
+        </div>
+
+        <div class="row mx-auto mb-3">
+          <%= f.label :password, class: "col-3" %><br />
+          <div class="col-6">
+          <%= f.password_field :password, autocomplete: "current-password" %>
+          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+          </div>
+        </div>
+
+        <div class="mx-auto col-6">
+          <%= f.submit "Log in", class: "btn btn-primary" %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "public/shared/links" %>
