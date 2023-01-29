@@ -15,9 +15,12 @@ class Public::ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
+      @notification = Notification.new
+      @notification.reservation = @reservation
+      NotificationMailer.welcome_email(@notification).deliver_later
       redirect_to menu_confirm_path(params[:menu_id])
       # 追加or質問
-      NotificationMailer.welcome_email(@notification).deliver_later
+
     else
       render :new
     end

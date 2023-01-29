@@ -19,7 +19,7 @@
 		<tbody>
 			<% @reservations.each do |reservation| %>
 				<tr>
-					<td><%= link_to reservation.created_at.strftime("%Y/%m/%d %H:%M:%S"), admin_menu_reservation_path(@menu), class: "underline" %></td>
+					<td><%= link_to reservation.created_at.strftime("%Y/%m/%d %H:%M:%S"), admin_menu_reservations_path(reservation.menu), class: "underline" %></td>
 					<td><%= link_to reservation.customer.full_name, admin_customer_path(reservation.customer) %></td>
 					<td><%= reservation.day %></td>
 					<td><%= reservation.time %></td>

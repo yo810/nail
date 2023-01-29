@@ -8,12 +8,12 @@ class Admin::ReservationsController < ApplicationController
     else
       @reservations = Reservation.includes(:customer).page(params[:page])
     end
-    @menu = Menu.find(params[:menu_id])
+#    @menu = Menu.find(params[:menu_id])
   end
 
   def show
     # 途中
-    @reservations = @includes(:menu)
+#    @reservations = @includes(:menu)
     @customer = @reservation.customer
   end
 

@@ -2,6 +2,7 @@ class Reservation < ApplicationRecord
 
   belongs_to :customer
   belongs_to :menu
+  has_one :notification
 
   def self.reservations_after_three_month
     # 今日から3ヶ月先までのデータを取得

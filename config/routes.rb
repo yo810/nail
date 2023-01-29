@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'top' => 'homes#top', as: 'top'
+    resources :reservations, only: [:index, :show, :update]
     resources :menus, except: [:destroy] do
       resources :reservations, only: [:index, :show, :update]
     end
