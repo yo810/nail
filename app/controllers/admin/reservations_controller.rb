@@ -14,7 +14,9 @@ class Admin::ReservationsController < ApplicationController
   def show
     # 途中
 #    @reservations = @includes(:menu)
-    @customer = @reservation.customer
+    @reservation = Reservation.find(params[:id])
+    @reservations = Reservation.all
+    # @customer = @reservation.customer
   end
 
   def reservation_params

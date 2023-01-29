@@ -1,7 +1,7 @@
-<section class="inner">
+<div class="container">
 	<h2 class="section-ttl">予約履歴詳細</h2>
-	<table class="reservation_info mb3 has_border">
-		<caption class="fz18 text-left">予約情報</caption>
+	<table class="reservation_info mb-3 has_border">
+		<h4 class="fz18 text-left">予約情報</h4>
 		<thead>
 			<tr>
 				<th></th>
@@ -14,14 +14,14 @@
 				<td><%= @reservation.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
 			</tr>
 			<tr>
-				<td>購入者</td>
-				<td><%= link_to @customer.full_name, admin_customer_path(@customer), class: "underline" %></td>
+				<td>予約者</td>
+				<td><%= link_to @reservation.customer.full_name, admin_customer_path(@reservation), class: "underline" %></td>
 			</tr>
 		</tbody>
 	</table>
 	<div class="flex">
 		<table class="admin_reservation mr2 has_border">
-			<caption class="fz18 text-left">予約内容</caption>
+			<h4 class="fz18 text-left">予約内容</h4>
 			<thead>
 				<tr>
 					<th>メニュー名</th>
@@ -35,11 +35,11 @@
 					<% menu = reservation.menu %>
 					<tr>
 						<td><%= link_to menu.name, admin_menu_path(menu) %></td>
-						<td class="text-center"><%= reservation.menu.name %></td>
-						<td class="text-center"><%= reservation.price %>円</td>
-						<td class="text-center"><%= reservation.course %></td>
+						<!--<td class="text-center"><%= reservation.menu.name %></td>-->
+						<td class="text-center"><%= reservation.menu.price %>円</td>
+						<td class="text-center"><%= reservation.menu.course %></td>
 						<td>
-							<%= form_with(model: reservation, url: do |f| %>
+							<%= form_with model:@reservation, url: admin_reservation_path do |f| %>
 								<%= f.submit "更新", class: "btn btn-primary" %>
 							<% end %>
 						</td>
@@ -47,5 +47,5 @@
 				<% end %>
 			</tbody>
 		</table>
-
-</section>
+  </div>
+</div>

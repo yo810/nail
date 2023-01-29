@@ -1,5 +1,5 @@
 <section class="inner">
-	<h2 class="section-ttl">
+	<h2 class="section-ttl text-center">
 		<% if params[:customer_id] %>
 			<%= @customer.full_name %>さんの注文履歴一覧
 		<% elsif params[:created_at] == "today" %>
@@ -19,7 +19,8 @@
 		<tbody>
 			<% @reservations.each do |reservation| %>
 				<tr>
-					<td><%= link_to reservation.created_at.strftime("%Y/%m/%d %H:%M:%S"), admin_menu_reservations_path(reservation.menu), class: "underline" %></td>
+					<td><%= link_to reservation.created_at.strftime("%Y/%m/%d %H:%M:%S"), admin_reservation_path(reservation.menu), class: "underline" %></td>
+					<!--admin_menu_reservations_path(reservation.menu)-->
 					<td><%= link_to reservation.customer.full_name, admin_customer_path(reservation.customer) %></td>
 					<td><%= reservation.day %></td>
 					<td><%= reservation.time %></td>
