@@ -62,3 +62,6 @@ gem 'kaminari','~> 1.2.1'
 gem "simple_calendar", "~> 2.4"
 
 gem 'rails-i18n'
+
+gem 'dotenv-rails'
+

@@ -1,3 +1,3 @@
 class Notification < ApplicationRecord
-  belongs_to :reservation
+  has_one :reservation
 end

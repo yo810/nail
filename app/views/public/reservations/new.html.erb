@@ -4,7 +4,7 @@
       <h1>新規予約画面</h1>
     </div>
     <div class="col-12 mt-3 content">
-      <%= form_with model: [@menu, @reservation], local: true, class: 'form' do |form| %>
+      <%= form_with model: @reservation, url: menu_reservations_path(@menu), local: true, class: 'form' do |form| %>
 
       <div class="day form-group">
         <%= form.label :day, '日付' %>

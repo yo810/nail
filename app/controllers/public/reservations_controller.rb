@@ -13,11 +13,14 @@ class Public::ReservationsController < ApplicationController
   end
 
   def create
+    @menu = Menu.find(params[:menu_id])
     @reservation = Reservation.new(reservation_params)
+    @reservation.customer_id = current_customer.id
+    @reservation.menu_id = @menu.id
     if @reservation.save
       @notification = Notification.new
-      @notification.reservation = @reservation
-      NotificationMailer.welcome_email(@notification).deliver_later
+      @notification.reservation_id = @reservation.id
+      NotificationMailer.welcome_email(@reservation).deliver_later
       redirect_to menu_confirm_path(params[:menu_id])
       # 追加or質問
 
