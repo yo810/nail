@@ -24,6 +24,14 @@
   background-color: #FFEBCD;
 }
 
+h2.section-ttl {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
 header {
   width: 100vw;
   position: fixed;
@@ -91,6 +99,77 @@ header {
   }
 }
 
+.image_field {
+  width: 220px;
+  text-align: center;
+  p {
+    margin-top: 10px;
+    text-align: left;
+  }
+}
+.admin_photo_image {
+  width: 220px;
+  height: 150px;
+
+  object-fit: cover;
+}
+.photo_image {
+  display: block;
+  width: 360px;
+  height: 240px;
+
+  object-fit: cover;
+}
+.btn-file {
+  overflow: hidden;
+  position: relative;
+  input[type=file] {
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 100px;
+    text-align: right;
+    cursor: inherit;
+    background: red;
+    opacity: 0;
+
+    filter: alpha(opacity=0);
+  }
+}
+
+table.admin_photo_info {
+  width: 400px;
+  margin-left: 20px;
+  thead {
+    tr {
+      th:first-child {
+        width: 35%;
+      }
+      th:last-child {
+        width: 65%;
+      }
+    }
+  }
+}
+table.admin_photo_info.photo_form {
+  tbody {
+    tr {
+      td {
+        vertical-align: top;
+      }
+      input,
+      textarea,
+      select {
+        width: 220px;
+      }
+    }
+  }
+}
+
+
 
 
 main {
@@ -105,4 +184,26 @@ footer {
   padding: 15px 0;
   font-size: 14px;
   text-align: center;
+}
+
+table.has_border {
+  width: 100%;
+  thead {
+    th {
+      border-width: 1px 1px 0;
+    }
+  }
+  tbody {
+    tr {
+      td {
+        vertical-align: middle;
+        border-width: 1px 1px 0;
+      }
+    }
+    tr:last-child {
+      td {
+        border-width: 1px;
+      }
+    }
+  }
 }
