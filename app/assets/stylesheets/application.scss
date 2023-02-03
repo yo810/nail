@@ -20,9 +20,9 @@
   background-attachment: fixed;
   background-position: center center;
 }
-.body- {
-  background-color: #FFEBCD;
-}
+// .body- {
+//   background-color: #FFEBCD;
+// }
 
 h2.section-ttl {
   text-align: center;
@@ -104,7 +104,7 @@ header {
   text-align: center;
   p {
     margin-top: 10px;
-    text-align: left;
+    // text-align: left;
   }
 }
 .admin_photo_image {
@@ -113,13 +113,13 @@ header {
 
   object-fit: cover;
 }
-.photo_image {
-  display: block;
-  width: 360px;
-  height: 240px;
+// .photo_image {
+//   display: block;
+//   width: 360px;
+//   height: 240px;
 
-  object-fit: cover;
-}
+//   object-fit: cover;
+// }
 .btn-file {
   overflow: hidden;
   position: relative;
@@ -140,34 +140,34 @@ header {
   }
 }
 
-table.admin_photo_info {
-  width: 400px;
-  margin-left: 20px;
-  thead {
-    tr {
-      th:first-child {
-        width: 35%;
-      }
-      th:last-child {
-        width: 65%;
-      }
-    }
-  }
-}
-table.admin_photo_info.photo_form {
-  tbody {
-    tr {
-      td {
-        vertical-align: top;
-      }
-      input,
-      textarea,
-      select {
-        width: 220px;
-      }
-    }
-  }
-}
+// table.admin_photo_info {
+//   width: 400px;
+//   margin-left: 20px;
+//   thead {
+//     tr {
+//       th:first-child {
+//         width: 35%;
+//       }
+//       th:last-child {
+//         width: 65%;
+//       }
+//     }
+//   }
+// }
+// table.admin_photo_info.photo_form {
+//   tbody {
+//     tr {
+//       td {
+//         vertical-align: top;
+//       }
+//       input,
+//       textarea,
+//       select {
+//         width: 220px;
+//       }
+//     }
+//   }
+// }
 
 
 
@@ -186,24 +186,24 @@ footer {
   text-align: center;
 }
 
-table.has_border {
-  width: 100%;
-  thead {
-    th {
-      border-width: 1px 1px 0;
-    }
-  }
-  tbody {
-    tr {
-      td {
-        vertical-align: middle;
-        border-width: 1px 1px 0;
-      }
-    }
-    tr:last-child {
-      td {
-        border-width: 1px;
-      }
-    }
-  }
-}
+// table.has_border {
+//   width: 100%;
+//   thead {
+//     th {
+//       border-width: 1px 1px 0;
+//     }
+//   }
+//   tbody {
+//     tr {
+//       td {
+//         vertical-align: middle;
+//         border-width: 1px 1px 0;
+//       }
+//     }
+//     tr:last-child {
+//       td {
+//         border-width: 1px;
+//       }
+//     }
+//   }
+// }
