@@ -1,44 +1,46 @@
 <div class="container">
-	<h2 class="section-ttl"><%= @customer.full_name %>さんのページ</h2>
-	<table class="customer_info">
-		<thead>
-			<th></th>
-			<th></th>
-			<th></th>
-		</thead>
-		<tbody>
-			<tr>
-				<td>会員ID</td>
-				<td colspan="2"><%= @customer.id %></td>
-			</tr>
-			<tr>
-				<td>名前</td>
-				<td>(姓) <%= @customer.last_name %></td>
-				<td>(名) <%= @customer.first_name %></td>
-			</tr>
-			<tr>
-				<td>フリガナ</td>
-				<td>(セイ) <%= @customer.last_name_kana %></td>
-				<td>(メイ) <%= @customer.first_name_kana %></td>
-			</tr>
-			<tr>
-				<td>メールアドレス</td>
-				<td colspan="2"><%= @customer.email %></td>
-			</tr>
-			<tr>
-				<td>会員ステータス</td>
-				<td colspan="2">
-					<% if @customer.is_deleted? %>
-						<span class="text-active">有効	</span>
-					<% else %>
-						<span class="text-invalid">退会済み</span>
-					<% end %>
-				</td>
-			</tr>
-			<tr>
-				<td><%= link_to "編集", edit_admin_customer_path(@customer), class: "btn btn-success" %></td>
-			</tr>
-		</tbody>
-	</table>
+	<h2 class="text-center pb-5"><%= @customer.full_name %>さんのページ</h2>
 
+	<div class="row justify-content-center mb-3">
+		<table class="table table-hover table-bordered col-8">
+			<!--<thead>-->
+			<!--	<th></th>-->
+			<!--	<th></th>-->
+			<!--	<th></th>-->
+			<!--</thead>-->
+			<tbody>
+				<tr>
+					<td>会員ID</td>
+					<td colspan="2"><%= @customer.id %></td>
+				</tr>
+				<tr>
+					<td>名前</td>
+					<td>(姓) <%= @customer.last_name %></td>
+					<td>(名) <%= @customer.first_name %></td>
+				</tr>
+				<tr>
+					<td>フリガナ</td>
+					<td>(セイ) <%= @customer.last_name_kana %></td>
+					<td>(メイ) <%= @customer.first_name_kana %></td>
+				</tr>
+				<tr>
+					<td>メールアドレス</td>
+					<td colspan="2"><%= @customer.email %></td>
+				</tr>
+				<tr>
+					<td>会員ステータス</td>
+					<td colspan="2">
+						<% if @customer.is_deleted? %>
+							<span class="text-active">有効	</span>
+						<% else %>
+							<span class="text-invalid">退会済み</span>
+						<% end %>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row justify-content-center">
+		<%= link_to "編集", edit_admin_customer_path(@customer), class: "btn btn-success btn-lg btn-block col-8" %></td>
+	</div>
 </div>

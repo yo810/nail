@@ -1,7 +1,7 @@
 class Admin::MenusController < ApplicationController
 
   def index
-    @menus = Menu.all
+    @menus = Menu.page(params[:page])
   end
 
   def new
