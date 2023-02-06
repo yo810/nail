@@ -1,5 +1,5 @@
-<section class="inner">
-	<h2 class="section-ttl text-center">
+<div class="container">
+	<h2 class="text-center pb-3">
 		<% if params[:customer_id] %>
 			<%= @customer.full_name %>さんの注文履歴一覧
 		<% elsif params[:created_at] == "today" %>
@@ -8,7 +8,7 @@
 			予約履歴一覧
 		<% end %>
 	</h2>
-	<table class="admin_reservations has_border">
+	<table class="table table-hover table-bordered">
 		<thead>
 			<tr>
 				<th>予約受付日</th>
@@ -28,4 +28,4 @@
 			<% end %>
 		</tbody>
 	</table>
-</section>
+</div>
