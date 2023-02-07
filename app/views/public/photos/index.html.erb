@@ -1,15 +1,17 @@
 <div class="container">
-  <div class="content">
-	<h2 class="section-ttl">フォト一覧</h2>
+	<h2 class="text-center">Gallery</h2>
 
-	<div class="items">
+	<div class="row justify-content-center">
 	  <% @photos.each do |photo| %>
+	  <div class="col-2 mr-5">
 		<%= link_to photo_path(photo) do %>
 		  <%= image_tag photo.get_image, size: "200x200", format: "jpeg", fallback: "no-image.png" %>
 		<% end %>
+		<div class="col-2 mx-auto">
 		  <p><%= photo.name %></p>
+		</div>
+		</div>
 	  <% end %>
 	</div>
 	<%= paginate @photos %>
-  </div>
 </div>
