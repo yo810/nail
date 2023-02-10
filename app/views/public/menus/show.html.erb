@@ -1,24 +1,30 @@
 <div class="container">
-  <div class="content">
-	<h2 class="section-ttl"><%= @menus.name %></h2>
-	<div class="flex">
-	  <%= image_tag @menus.get_image, size: "200x200", class: "item_image" %>
-		<div class="item_info">
-		  <h4><%= @menus.introduction %></h4>
-		</div>
-		<div>
-		  <%= @menus.with_tax_price %>円
-		<div>
-		  <%= @menus.course %>
+	<h2 class="title text-center"><%= @menus.name %></h2>
+  <div class="row">
+		<div class="menu">
+			<ul>
+			  <li>
+			  	<div class="introduction">
+			  		<p><%= @menus.introduction %></p>
+			  	</div>
+
+			  	<div class="course">
+			  		<p><%= @menus.course %></p>
+			  	</div>
+
+			  	<div class="price">
+			  		<p><%= @menus.with_tax_price %>円</p>
+			  	</div>
+			  </li>
+		  </ul>
 		</div>
 	</div>
-  </div>
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-12 text-center">
-      <h1>予約画面</h1>
+      <h2 class="title text-center">予約画面</h2>
       <p>3ヶ月先まで予約することができます。</p>
     </div>
     <div class="col-12 mt-3">

@@ -1,15 +1,15 @@
 <div class="container">
-	<h2 class="text-center pb-3"><%= @photo.name %>の編集</h2>
+	<h2 class="title text-center pb-5"><%= @photo.name %>の編集</h2>
   <%= form_with model: @photo, url: admin_photo_path do |f| %>
 
 	<div>
-		<div class="row justify-content-center mb-3">
+		<div class="row justify-content-center mb-5">
 			  <%= f.label :image, "画像" %>
 			<div class="image_field">
 				<%= f.file_field :image %>
 			</div>
 		</div>
-		<table class="row justify-content-center mb-3">
+		<table class="row justify-content-center mb-5">
 			<thead>
 				<tr>
 					<th></th>
@@ -23,7 +23,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="mx-auto col-3">
+		<div class="mx-auto col-4">
 			<%= f.submit '変更', class: "btn btn-primary btn-lg btn-block" %>
 		</div>
 	</div>

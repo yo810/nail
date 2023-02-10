@@ -169,8 +169,62 @@ header {
 //   }
 // }
 
+.title {
+  font-family: 'Rufina', serif;
+}
 
+.menu {
+  width: 1000px;
+  margin: 0 auto;
+}
 
+.menu .menuTit {
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #111;
+  position: relative;
+}
+
+.menu .menuTit .eng {
+  font-family: 'Rufina', serif;
+}
+
+.ul, li {
+  list-style: none;
+}
+
+.menu li {
+  width: 100%;
+  padding: 28px 25px;
+  border-bottom: 1px solid #E6E6E6;
+  display: table;
+  letter-spacing: 0.5px;
+}
+
+.menu .menu li .detail .introduction {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1;
+  margin: 4px 0 5px;
+  letter-spacing: 0;
+}
+
+.menu li .course {
+  width: 145px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.2rem;
+}
+
+.menu li .price {
+  width: 165px;
+  display: table-cell;
+  text-align: right;
+  vertical-align: middle;
+  font-size: 1.2rem;
+}
 
 main {
   padding: 180px 0;

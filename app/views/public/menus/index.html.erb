@@ -1,17 +1,39 @@
 <div class="container">
-  <div class="content">
-	<h2 class="text-center">Menu & Price</h2>
+	<h2 class="title text-center">Menu & Price</h2>
 
-	<div class="items">
-	  <% @menus.each do |menu| %>
-		<%= link_to menu_path(menu) do %>
-		  <%= image_tag menu.get_image, size: "200x200", format: "jpeg", fallback: "no-image.png" %>
-		<% end %>
-		  <p><%= menu.name %></p>
-		  <p><%= menu.with_tax_price %>円</p>
-		  <p><%= menu.course %></p>
-	  <% end %>
+	<div class="row">
+
+		<div class="menu">
+			<p class="menuTit">
+				<span class="eng">Hand Gel</span>
+			</p>
+			<ul>
+		  <% @menus.each do |menu| %>
+			<!--<%= link_to menu_path(menu) do %>-->
+			<!--  <%= image_tag menu.get_image, size: "100x100", format: "jpeg", fallback: "no-image.png" %>-->
+			<!--<% end %>-->
+			  <li>
+			  	<div class="detail">
+			  		<%= link_to menu_path(menu) do %>
+			  		<p><%= menu.name %>
+			  		   <div class="introduction">
+			  		     <p><%= menu.introduction %></p>
+			  	     </div>
+			  		</p>
+			  		<% end %>
+			  	</div>
+
+			  	<div class="course">
+			  		<p><%= menu.course %></p>
+			  	</div>
+
+			  	<div class="price">
+			  		<p><%= menu.with_tax_price %>円</p>
+			  	</div>
+			  </li>
+		  <% end %>
+		  </ul>
+		</div>
 	</div>
 	<%= paginate @menus %>
-  </div>
 </div>

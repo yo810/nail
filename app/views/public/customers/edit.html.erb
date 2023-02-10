@@ -1,5 +1,5 @@
 <div class="container">
-	<h2 class="text-center pb-5"><%= @customer.last_name %> <%= @customer.first_name %> さんの会員情報編集</h2>
+	<h2 class="title text-center pb-5"><%= @customer.last_name %> <%= @customer.first_name %> さんの会員情報編集</h2>
 	<%= form_with model: @customer, url: update_information_path(@customer) do |f| %>
 
 		<div class="row justify-content-center pb-3">
@@ -14,7 +14,7 @@
 			<div class="col-3"><%= f.text_field :first_name_kana, :placeholder =>"#{@customer.first_name_kana}", class: "form-control" %></div>
 		</div>
 
-		<div class="row justify-content-center pb-3">
+		<div class="row justify-content-center pb-5">
 			<div class="col-2 col-form-label">メールアドレス</div>
 			<div class="col-6"><%= f.email_field :email, autocomplete: "email", :placeholder =>"#{@customer.email}", class: "form-control" %></div>
 		</div>
