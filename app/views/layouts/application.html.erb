@@ -15,32 +15,32 @@
     <header class="header">
       <nav class="navbar navbar-expand-lg navbar-light p-4">
         <div class="container">
-          <a class="navbar-brand" href="/">NAIL CHUPINET</a>
+          <a class="title navbar-brand" href="/">NAIL CHUPINET</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           　<div class="collapse navbar-collapse" id="navbarNavDropdown">
-            　<ul class="navbar-nav ml-auto">
+            　<ul class="title navbar-nav ml-auto">
 
               <% if admin_signed_in? %>
                 <li>
-                  <%= link_to "会員一覧", admin_customers_path %>
+                  <%= link_to "Custome", admin_customers_path %>
                 </li>
                 <li>
-                  <%= link_to "フォト新規登録", new_admin_photo_path %>
+                  <%= link_to "Photo新規登録", new_admin_photo_path %>
                 </li>
                 <li>
-                  <%= link_to "フォト一覧", admin_photos_path %>
+                  <%= link_to "Photo", admin_photos_path %>
                 </li>
                 <li>
-                  <%= link_to "メニュー新規登録", new_admin_menu_path %>
+                  <%= link_to "Menu新規登録", new_admin_menu_path %>
                 </li>
                 <li>
-                  <%= link_to "メニュー一覧", admin_menus_path %>
+                  <%= link_to "Mune", admin_menus_path %>
                 </li>
                 <li>
-                  <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+                  <%= link_to "logout", destroy_admin_session_path, method: :delete %>
                 </li>
               <% elsif customer_signed_in? %>
                 <li class="ml-4">
@@ -57,10 +57,10 @@
                 </li>
               <% else %>
                 <li class="ml-4">
-                  <%= link_to "新規登録", new_customer_registration_path %>
+                  <%= link_to "Sign up", new_customer_registration_path %>
                 </li>
                 <li class="ml-4">
-                  <%= link_to "ログイン", new_customer_session_path %>
+                  <%= link_to "Log in", new_customer_session_path %>
                 </li>
               <% end %>
         　     </ul>
