@@ -65,3 +65,5 @@ gem 'rails-i18n'
 
 gem 'dotenv-rails'
 
+gem "enum_help"
+

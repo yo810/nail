@@ -1,0 +1,7 @@
+ja:
+  enums:
+    menu:
+      course:
+        short: "60分"
+        middle: "90分"
+        long: "120分"
