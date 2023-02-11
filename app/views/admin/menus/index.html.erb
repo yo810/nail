@@ -19,7 +19,7 @@
 						<td><%= link_to menu.name, admin_menu_path(menu) %></td>
 						<td><%= menu.introduction %></td>
 						<td><%= menu.course_i18n %></td>
-						<td class="text-center"><%= menu.price %>円</td>
+						<td class="text-center"><%= menu.with_tax_price.to_s(:delimited) %>円</td>
 					</tr>
 				<% end %>
 			</tbody>
