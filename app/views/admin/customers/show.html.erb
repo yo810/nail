@@ -1,7 +1,7 @@
 <div class="container">
 	<h2 class="title text-center pb-5"><%= @customer.full_name %>さんのページ</h2>
 
-	<div class="row justify-content-center mb-3">
+	<div class="row justify-content-center mb-3 title">
 		<table class="table table-hover table-bordered col-8">
 			<!--<thead>-->
 			<!--	<th></th>-->
@@ -40,7 +40,7 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="row justify-content-center">
+	<div class="row justify-content-center title">
 		<%= link_to "編集", edit_admin_customer_path(@customer), class: "btn btn-success btn-lg btn-block col-8" %></td>
 	</div>
 </div>

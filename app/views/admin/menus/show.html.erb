@@ -1,39 +1,35 @@
 <div class="container">
 	<h2 class="title text-center pb-5">Menu 詳細</h2>
-	<div>
-		<div>
-			<div class="row justify-content-center mb-3">
+	<div class="title">
+		<div class="row justify-content-center mb-5">
+			<div class="mb-3">
 				<%= image_tag @menu.get_image, size: "200x200", class: "admin_menu_image" %>
 			</div>
 		</div>
-		<table class="row justify-content-center mb-3">
-			<thead>
-				<tr>
-					<th></th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>メニュー名</td>
-					<td><%= @menu.name %></td>
-				</tr>
-				<tr>
-					<td>メニュー説明</td>
-					<td><%= @menu.introduction %></td>
-				</tr>
-				<tr>
-					<td>税抜価格</td>
-					<td><%= @menu.price %>円</td>
-				</tr>
-				<tr>
-					<td>コース</td>
-					<td><%= @menu.course %></td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="mx-auto col-3">
-			<%= link_to "編集する", edit_admin_menu_path(@menu), class: "btn btn-success btn-lg btn-block" %>
+		<div class="row justify-content-center">
+			<table class="table table-hover table-bordered mb-5 w-50">
+				<tbody>
+					<tr>
+						<td class="col-2">メニュー名</td>
+						<td class="col-2"><%= @menu.name %></td>
+					</tr>
+					<tr>
+						<td class="col-2">メニュー説明</td>
+						<td class="col-2"><%= @menu.introduction %></td>
+					</tr>
+					<tr>
+						<td class="col-2">税抜価格</td>
+						<td class="col-2"><%= @menu.price %>円</td>
+					</tr>
+					<tr>
+						<td class="col-2">コース</td>
+						<td class="col-2"><%= @menu.course %></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="row justify-content-center">
+			<%= link_to "編集する", edit_admin_menu_path(@menu), class: "btn btn-success btn-lg btn-block col-3" %>
 		</div>
 	</div>
 </div>

@@ -2,14 +2,14 @@
 	<h2 class="title text-center pb-3"><%= @menu.name %>の編集</h2>
   <%= form_with model: @menu, url: admin_menu_path do |f| %>
 
-	<div>
-		<div class="row justify-content-center mb-3">
-			  <%= f.label :image, "画像" %>
-			<div class="image_field">
-				<%= f.file_field :image %>
-			</div>
-		</div>
-		<table class="row justify-content-center mb-3">
+	<div class="title">
+		<!--<div class="row justify-content-center mb-3">-->
+		<!--	  <%#= f.label :image, "画像" %>-->
+		<!--	<div class="image_field">-->
+		<!--		<%#= f.file_field :image %>-->
+		<!--	</div>-->
+		<!--</div>-->
+		<table class="row justify-content-center mb-5">
 			<thead>
 				<tr>
 					<th></th>
@@ -19,24 +19,24 @@
 			<tbody>
 				<tr>
 					<td><%= f.label :name, "メニュー名" %></td>
-					<td><%= f.text_field :name, class: "form-control" %></td>
+					<td><%= f.text_field :name, class: "form-control mb-3", size: "50" %></td>
 				</tr>
 				<tr>
 					<td><%= f.label :introduction, "メニュー説明" %></td>
-					<td><%= f.text_area :introduction, rows: 3, class: "form-control" %></td>
+					<td><%= f.text_area :introduction, rows: 3, class: "form-control mb-3" %></td>
 				</tr>
 				<tr>
 					<td><%= f.label :price, "税抜価格" %></td>
-					<td><%= f.number_field :price, class: "form-control" %></td>
+					<td><%= f.number_field :price, class: "form-control mb-3" %></td>
 				</tr>
 				<tr>
 					<td><%= f.label :course, "コース" %></td>
-					<td><%= f.text_field :course, class: "form-control" %></td>
+					<td><%= f.select :course, Menu.courses.slice(:short, :middle, :long).keys.map { |k| [t("enum.menu.course.#{k}"), k] }, { include_blank: "指定なし" }, class: 'form-control' %></td>
 				</tr>
 			</tbody>
 		</table>
-		<div class="mx-auto col-3">
-			<%= f.submit '変更', class: "btn btn-primary btn-lg btn-block" %>
+		<div class="row justify-content-center">
+			<%= f.submit '変更', class: "btn btn-primary btn-lg btn-block col-3" %>
 		</div>
 	</div>
 <% end %>

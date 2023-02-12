@@ -3,43 +3,32 @@
 
 		<%= form_with model: @photo, url: admin_photos_path do |f| %>
 
-			<div class="row mx-auto">
-				<div class="row">
-					<div class="col-4">
-					  <%= f.label :image, "画像" %>
-					</div>
-					<div class="col-8">
-						<%= image_tag (@photo.image.attached? ? photo.image : 'no-image.png'), id: "img_prev", class: "admin_photo_image" %>
-						<span class="btn btn-file btn-info"><%= f.file_field :image,  accept:'image/*' %>画像選択</span>
-				    <p>選択するとプレビューされます。<br>画像未選択のままだと、<br>「画像準備中」になります。</p>
-					</div>
-				</div>
-				<!--<table class="admin_photo_info phot_form">-->
-				<!--	<thead>-->
-				<!--		<tr>-->
-				<!--			<th></th>-->
-				<!--			<th></th>-->
-				<!--		</tr>-->
-				<!--	</thead>-->
-				<!--	<tbody>-->
-				<!--		<tr>-->
-				<!--			<td><%= f.label :name, "フォト名" %></td>-->
-				<!--			<td><%= f.text_field :name %></td>-->
-				<!--		</tr>-->
-				<!--	</tbody>-->
-				<!--</table>-->
+			<div class="title">
+				<table class="row justify-content-center mb-5">
+					<thead>
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><%= f.label :image, "画像" %></td>
+							<td>
+						      <%= image_tag (@photo.image.attached? ? photo.image : 'no-image.png'), id: "img_prev", class: "admin_photo_image" %>
+						      <span class="btn btn-file btn-info"><%= f.file_field :image,  accept:'image/*' %>画像選択</span>
+				          <p>選択するとプレビューされます。<br>画像未選択のままだと、<br>「画像準備中」になります。</p>
+							</td>
+						</tr>
+						<tr>
+							<td><%= f.label :name, "フォト名" %></td>
+							<td><%= f.text_field :name, class: "form-control" %></td>
+						</tr>
+					</tbody>
+				</table>
 
-				<div class="row pb-3">
-          <div class="col-4">
-            <%= f.label :name, "フォト名", class: "col-form-label" %>
-          </div>
-          <div class="col-8">
-            <%= f.text_field :name, class: "form-control" %>
-          </div>
-        </div>
-
-				<div class="mx-auto">
-					<%= f.submit '登録', class: "btn btn-primary" %>
+				<div class="row justify-content-center">
+					<%= f.submit '登録', class: "btn btn-primary btn-lg d-block col-3" %>
 				</div>
 			</div>
 		<% end %>
