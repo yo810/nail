@@ -15,14 +15,15 @@
  */
 
 .body-top {
-  background-image: url("laura-chouette-8WlM9twbNJA-unsplash.jpg");
+  background-image: url("maria-lupan-Rlakka_pZMU-unsplash.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
 }
-// .body- {
-//   background-color: #FFEBCD;
-// }
+
+.body- {
+  background-image: url("gabriel-mihalcea-cEbTBpzU-t0-unsplash.jpg");
+}
 
 h2.section-ttl {
   text-align: center;
@@ -181,7 +182,7 @@ header {
 .menu .menuTit {
   font-size: 1.9rem;
   letter-spacing: 1px;
-  border-bottom: 1px solid #111;
+  border-bottom: 1.5px solid #111;
   position: relative;
 }
 
@@ -196,7 +197,7 @@ header {
 .menu li {
   width: 100%;
   padding: 28px 25px;
-  border-bottom: 1px solid #E6E6E6;
+  border-bottom: 2px solid #E6E6E6;
   display: table;
   letter-spacing: 0.5px;
 }
@@ -227,7 +228,7 @@ header {
 }
 
 .menushow {
-  border-top: 1px solid #E6E6E6;
+  border-top: 2px solid #E6E6E6;
 }
 
 main {

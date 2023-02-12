@@ -1,7 +1,7 @@
 <div class="container">
 	<h2 class="title text-center">Menu & Price</h2>
 
-	<div class="row">
+	<div class="row justify-content-center title">
 
 		<div class="menu">
 			<p class="menuTit">
@@ -9,9 +9,9 @@
 			</p>
 			<ul>
 		  <% @menus.each do |menu| %>
-			<!--<%= link_to menu_path(menu) do %>-->
-			<!--  <%= image_tag menu.get_image, size: "100x100", format: "jpeg", fallback: "no-image.png" %>-->
-			<!--<% end %>-->
+			<!--<%#= link_to menu_path(menu) do %>-->
+			<!--  <%#= image_tag menu.get_image, size: "100x100", format: "jpeg", fallback: "no-image.png" %>-->
+			<!--<%# end %>-->
 			  <li>
 			  	<div class="detail">
 			  		<%= link_to menu_path(menu) do %>
@@ -28,7 +28,7 @@
 			  	</div>
 
 			  	<div class="price">
-			  		<p><%= menu.with_tax_price %>円</p>
+			  		<p><%= menu.with_tax_price.to_s(:delimited) %>円</p>
 			  	</div>
 			  </li>
 		  <% end %>
