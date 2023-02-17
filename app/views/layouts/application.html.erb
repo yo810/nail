@@ -21,6 +21,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           　<div class="collapse navbar-collapse" id="navbarNavDropdown">
+          　<div class="navigation">
             　<ul class="title navbar-nav ml-auto">
 
               <% if admin_signed_in? %>
@@ -43,17 +44,17 @@
                   <%= link_to "logout", destroy_admin_session_path, method: :delete %>
                 </li>
               <% elsif customer_signed_in? %>
-                <li class="ml-4">
-                  <%= link_to "photo", photos_path %>
+                <li class="button ml-4">
+                  <%= link_to "photo", photos_path, class: "photo_button" %>
                 </li>
-                <li class="ml-4">
-                  <%= link_to "menu", menus_path %>
+                <li class="button ml-4">
+                  <%= link_to "menu", menus_path, class: "menu_button" %>
                 </li>
-                <li class="ml-4">
-                  <%= link_to "mypage", my_page_path(current_customer) %>
+                <li class="button ml-4">
+                  <%= link_to "mypage", my_page_path(current_customer), class: "mypage_button" %>
                 </li>
-                <li class="ml-4">
-                  <%= link_to "logout", destroy_customer_session_path, method: :delete %>
+                <li class="button ml-4">
+                  <%= link_to "logout", destroy_customer_session_path, method: :delete, class: "logout_button" %>
                 </li>
               <% else %>
                 <li class="ml-4">
@@ -64,12 +65,13 @@
                 </li>
               <% end %>
         　     </ul>
+        　   </div>
             </div>
         </div>
       </nav>
     </header>
 
-    <main>
+    <main class="main">
       <%= yield %>
     </main>
 
