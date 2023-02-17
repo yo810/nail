@@ -28,7 +28,7 @@
 				<tr>
 					<td><%= f.label :course, "コース" %></td>
 					<!--<td><#%= f.select :course, [['60',1], ['90',2], ['120',3]], {}, {class: 'form-control'} %></td>-->
-					<td><%= f.select :course, Menu.courses.slice(:short, :middle, :long).keys.map { |k| [t("enum.menu.course.#{k}"), k] }, { include_blank: "指定なし" }, class: 'form-control' %></td>
+					<td><%= f.select :course, Menu.courses.keys.map { |k| [I18n.t("enum.menu.course.#{k}"), k] }, { include_blank: "指定なし" }, class: 'form-control' %></td>
 				</tr>
 			</tbody>
 		</table>

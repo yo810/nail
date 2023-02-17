@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get 'customers/information/edit' => 'customers#edit', as: 'edit_information'
     patch 'customers/information' => 'customers#update', as: 'update_information'
     get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
-    patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
+    patch 'customers/widhdraw' => 'customers#widhdraw', as: 'widhdraw_customer'
 
     resources :menus, only: [:index, :show] do
       resources :reservations, only: [:new, :create, :destroy]
