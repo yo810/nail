@@ -1,7 +1,7 @@
-<div class="container">
-	<h2 class="title text-center">Menu & Price</h2>
+<div class="container title">
+	<h2 class="text-center">Menu & Price</h2>
 
-	<div class="row justify-content-center title">
+	<div class="row justify-content-center">
 
 		<div class="menu">
 			<p class="menuTit">
@@ -9,18 +9,12 @@
 			</p>
 			<ul>
 		  <% @menus.each do |menu| %>
-			<!--<%#= link_to menu_path(menu) do %>-->
-			<!--  <%#= image_tag menu.get_image, size: "100x100", format: "jpeg", fallback: "no-image.png" %>-->
-			<!--<%# end %>-->
 			  <li>
 			  	<div class="detail">
-			  		<%= link_to menu_path(menu) do %>
-			  		<p><%= menu.name %></p>
-			  		   <div class="introduction">
-			  		     <p><%= menu.introduction %></p>
-			  	     </div>
-			  		</p>
-			  		<% end %>
+			  		<%= link_to menu.name, menu_path(menu) %>
+	  		    <div class="introduction">
+	  		      <p><%= menu.introduction %></p>
+	  	      </div>
 			  	</div>
 
 			  	<div class="course">
