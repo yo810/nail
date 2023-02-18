@@ -32,6 +32,6 @@ class Admin::PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:name)
+    params.require(:photo).permit(:name, :image)
   end
 end

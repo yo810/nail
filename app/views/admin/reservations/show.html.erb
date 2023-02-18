@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container title">
 	<h2 class="text-center pb-3">予約履歴詳細</h2>
 	<table class="table table-hover table-bordered">
 		<h4 class="text-center pb-3">予約情報</h4>
@@ -11,7 +11,8 @@
 		<tbody>
 			<tr>
 				<td>予約日時</td>
-				<td><%= @reservation.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+				<td><%= @reservation.day %> <%= @reservation.time %></td>
+				<!--<td><%#= @reservation.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>-->
 			</tr>
 			<tr>
 				<td>予約者</td>
@@ -34,9 +35,9 @@
 				<% menu = reservation.menu %>
 				<tr>
 					<td><%= link_to menu.name, admin_menu_path(menu) %></td>
-					<!--<td class="text-center"><%= reservation.menu.name %></td>-->
-					<td class="text-center"><%= reservation.menu.price %>円</td>
-					<td class="text-center"><%= reservation.menu.course %></td>
+					<!--<td class="text-center"><%#= reservation.menu.name %></td>-->
+					<td class="text-center"><%= reservation.menu.price.to_s(:delimited) %>円</td>
+					<td class="text-center"><%= reservation.menu.course_i18n %></td>
 					<td>
 						<%= form_with model:@reservation, url: admin_reservation_path do |f| %>
 							<%= f.submit "更新", class: "btn btn-primary" %>

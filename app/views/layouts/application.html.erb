@@ -26,6 +26,9 @@
 
               <% if admin_signed_in? %>
                 <li class="ml-4">
+                  <%= link_to "予約一覧", admin_reservations_path %>
+                </li>
+                <li class="ml-4">
                   <%= link_to "Customer", admin_customers_path %>
                 </li>
                 <li class="ml-4">
