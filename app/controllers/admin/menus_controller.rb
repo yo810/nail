@@ -30,6 +30,16 @@ class Admin::MenusController < ApplicationController
     end
   end
 
+  def destroy
+    @menu = Menu.find(params[:id])
+    if @menu.destroy
+      flash[:success] = "Menuを削除しました。"
+      redirect_to admin_menus_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def menu_params

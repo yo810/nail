@@ -1,23 +1,17 @@
-<div class="container">
-	<h2 class="title text-center pb-5">Photo 新規登録</h2>
+<div class="container title">
+	<h2 class="text-center pb-5">Photo 新規登録</h2>
 
 		<%= form_with model: @photo, url: admin_photos_path do |f| %>
 
-			<div class="title">
+			<div>
 				<table class="row justify-content-center mb-5">
-					<thead>
-						<tr>
-							<th></th>
-							<th></th>
-						</tr>
-					</thead>
 					<tbody>
 						<tr>
 							<td><%= f.label :image, "画像" %></td>
 							<td>
-						      <!--<%#= image_tag (@photo.image.attached? ? photo.image : 'no-image.png'), id: "img_prev", class: "admin_photo_image" %>-->
-						      <span class="btn btn-file btn-info form-control"><%= f.file_field :image, accept: "image/*" %>画像選択</span>
-				          <!--<p>選択するとプレビューされます。<br>画像未選択のままだと、<br>「画像準備中」になります。</p>-->
+					      <!--<%#= image_tag (@photo.image.attached? ? photo.image : 'no-image.png'), id: "img_prev", class: "admin_photo_image" %>-->
+					      <span class="btn btn-file btn-info form-control mb-3"><%= f.file_field :image, accept: "image/*" %>画像選択</span>
+			          <!--<p>選択するとプレビューされます。<br>画像未選択のままだと、<br>「画像準備中」になります。</p>-->
 							</td>
 						</tr>
 						<tr>

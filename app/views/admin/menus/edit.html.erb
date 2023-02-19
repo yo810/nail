@@ -31,13 +31,17 @@
 				</tr>
 				<tr>
 					<td><%= f.label :course, "コース" %></td>
-					<td><%= f.select :course, Menu.courses.slice(:short, :middle, :long).keys.map { |k| [t("enum.menu.course.#{k}"), k] }, { include_blank: "指定なし" }, class: 'form-control' %></td>
+					<td><%= f.select :course, Menu.courses.keys.map { |k| [I18n.t("enums.menu.course.#{k}"), k] }, { include_blank: "指定なし" }, class: 'form-control' %></td>
 				</tr>
 			</tbody>
 		</table>
 		<div class="row justify-content-center">
-			<%= f.submit '変更', class: "btn btn-primary btn-lg btn-block col-3" %>
+			<%= f.submit '変更', class: "btn btn-primary btn-lg btn-block col-6 mb-3" %>
 		</div>
+		<div class="row justify-content-center">
+			<%= link_to "削除する", admin_menu_path(@menu.id), method: :delete, data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" }, class: "btn btn-danger btn-lg btn-block col-6" %>
+		</div>
+
 	</div>
 <% end %>
 </div>

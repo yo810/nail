@@ -15,11 +15,11 @@
 			<tbody>
 				<% @menus.each do |menu| %>
 					<tr>
-						<td class="text-center"><%= menu.id %></td>
+						<td><%= menu.id %></td>
 						<td><%= link_to menu.name, admin_menu_path(menu) %></td>
 						<td><%= menu.introduction %></td>
 						<td><%= menu.course_i18n %></td>
-						<td class="text-center"><%= menu.with_tax_price.to_s(:delimited) %>円</td>
+						<td><%= menu.with_tax_price.to_s(:delimited) %>円</td>
 					</tr>
 				<% end %>
 			</tbody>

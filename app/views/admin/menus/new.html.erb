@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container title">
 
-	<h2 class="title text-center pb-5">Menu 新規登録</h2>
+	<h2 class="text-center pb-5">Menu 新規登録</h2>
 
 　<%= form_with model: @menu, url: admin_menus_path do |f| %>
 
-	<div class="title">
-		<table class="row justify-content-center mb-5 title">
+	<div>
+		<table class="row justify-content-center mb-5">
 			<thead>
 				<tr>
 					<th></th>
@@ -28,7 +28,7 @@
 				<tr>
 					<td><%= f.label :course, "コース" %></td>
 					<!--<td><#%= f.select :course, [['60',1], ['90',2], ['120',3]], {}, {class: 'form-control'} %></td>-->
-					<td><%= f.select :course, Menu.courses.keys.map { |k| [I18n.t("enum.menu.course.#{k}"), k] }, { include_blank: "指定なし" }, class: 'form-control' %></td>
+					<td><%= f.select :course, Menu.courses.keys.map { |k| [I18n.t("enums.menu.course.#{k}"), k] }, { include_blank: "指定なし" }, class: 'form-control' %></td>
 				</tr>
 			</tbody>
 		</table>
