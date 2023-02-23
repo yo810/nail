@@ -26,6 +26,11 @@ InstagramやLINEで予約をとっているが、顧客情報の管理や予約�
 
 https://docs.google.com/spreadsheets/d/1TLqZjZALjYiWJVuHsgpv_ZxmGZW-kqSOvtxvySoR3Y8/edit?usp=sharing
 
+## テスト
+- テスト仕様書
+
+https://docs.google.com/spreadsheets/d/1Oa-k3i4yMwRH1MPl3mBsJT20In4ZulvCuJQ5we4NqXQ/edit?usp=sharing
+
 ## 機能一覧
 - ゲストログイン
 
@@ -52,8 +57,3 @@ https://docs.google.com/spreadsheets/d/1TLqZjZALjYiWJVuHsgpv_ZxmGZW-kqSOvtxvySoR
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
-
-## 使用素材
-- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
-- 使用しない場合は、使用素材の項目をREADMEから削除してください。
-  追加するかもしれません。
