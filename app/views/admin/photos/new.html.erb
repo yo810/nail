@@ -1,4 +1,13 @@
+
 <div class="container title">
+	<% if @photo.errors.any? %>
+    <%= @photo.errors.count %>件のエラーが発生しました
+    <ul>
+      <% @photo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
 	<h2 class="text-center pb-5">Photo 新規登録</h2>
 
 		<%= form_with model: @photo, url: admin_photos_path do |f| %>

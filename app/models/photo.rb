@@ -4,6 +4,9 @@ class Photo < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
 
+  validates :name, presence: true
+  validates :image, presence: true
+
   def favorited_by?(customer)
     favorites.exists?(customer_id: customer.id)
   end
