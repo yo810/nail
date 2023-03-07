@@ -3,6 +3,10 @@ class Menu < ApplicationRecord
   has_one_attached :image
   has_many :reservations, dependent: :destroy
 
+  validates :name, presence: true
+  validates :introduction, presence: true
+  validates :price, presence: true
+
   enum course: { short: 0, middle: 1, long: 2 }
 
   def get_image
@@ -14,7 +18,7 @@ class Menu < ApplicationRecord
   end
 
   def with_tax_price
-    (price * 1.1).ceil
+    (price * 1.1).floor
   end
 
 end

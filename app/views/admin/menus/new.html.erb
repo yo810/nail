@@ -1,5 +1,14 @@
 <div class="container title">
 
+	<% if @menu.errors.any? %>
+    <%= @menu.errors.count %>件のエラーが発生しました
+    <ul>
+      <% @menu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
 	<h2 class="text-center pb-5">Menu 新規登録</h2>
 
 　<%= form_with model: @menu, url: admin_menus_path do |f| %>
