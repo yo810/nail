@@ -3,12 +3,6 @@
 		<h2 class="pb-3">予約履歴詳細</h2>
 		<table class="table table-hover table-bordered">
 			<h4 class="pb-3">予約情報</h4>
-			<!--<thead>-->
-			<!--	<tr>-->
-			<!--		<th></th>-->
-			<!--		<th></th>-->
-			<!--	</tr>-->
-			<!--</thead>-->
 			<tbody>
 				<tr>
 					<td>予約日時</td>
@@ -28,24 +22,31 @@
 					<th>メニュー名</th>
 					<th>価格(税込)</th>
 					<th>コース</th>
-					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<% @reservations.each do |reservation| %>
-					<% menu = reservation.menu %>
-					<tr>
-						<td><%= link_to menu.name, admin_menu_path(menu) %></td>
+				<!--<#% @reservations.each do |reservation| %>-->
+				<!--	<#% menu = reservation.menu %>-->
+				<!--	<tr>-->
+				<!--		<td><#%= link_to menu.name, admin_menu_path(menu) %></td>-->
 						<!--<td class="text-center"><%#= reservation.menu.name %></td>-->
-						<td><%= reservation.menu.price.to_s(:delimited) %>円</td>
-						<td><%= reservation.menu.course_i18n %></td>
-						<td>
-							<%= form_with model:@reservation, url: admin_reservation_path do |f| %>
-								<%= f.submit "更新", class: "btn btn-primary" %>
-							<% end %>
-						</td>
-					</tr>
-				<% end %>
+				<!--		<td><#%= reservation.menu.price.to_s(:delimited) %>円</td>-->
+				<!--		<td><#%= reservation.menu.course_i18n %></td>-->
+				<!--		<td>-->
+				<!--			<#%= form_with model:@reservation, url: admin_reservation_path do |f| %>-->
+				<!--				<%#= f.submit "更新", class: "btn btn-primary" %>-->
+				<!--			<%# end %>-->
+				<!--		</td>-->
+				<!--	</tr>-->
+				<!--<%# end %>-->
+
+				<!--変更-->
+				<tr>
+          <td><%= @reservation.menu.name %></td>
+          <td><%= @reservation.menu.with_tax_price.to_s(:delimited) %></td>
+          <td><%= @reservation.menu.course_i18n %></td>
+        </tr>
+        <!--ここまで-->
 			</tbody>
 		</table>
 	</div>
