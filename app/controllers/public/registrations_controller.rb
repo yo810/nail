@@ -60,7 +60,9 @@ class Public::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  protected
+
+
+  #protected
 
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [
@@ -70,4 +72,13 @@ class Public::RegistrationsController < Devise::RegistrationsController
       :first_name_kana,
       ])
   end
+
+  def after_sign_up_path_for(resource)
+    my_page_path
+  end
+
+  def after_update_path_for(resource)
+    my_page_path
+  end
+
 end
