@@ -17,7 +17,8 @@ Rails.application.routes.draw do
 
     resources :menus, only: [:index, :show] do
       resources :reservations, only: [:new, :create, :destroy]
-      get '/reservations/confirm' => 'reservations#confirm', as: 'confirm'
+      #下記:id追加
+      get '/reservations/confirm/:id' => 'reservations#confirm', as: 'confirm'
     end
     resources :photos, only: [:index, :show] do
       resource :favorites, only: [:create, :destroy]

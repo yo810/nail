@@ -5,7 +5,7 @@
 	  <% @photos.each do |photo| %>
 	  <div class="col-2 mr-5">
 		<%= link_to photo_path(photo) do %>
-		  <%= image_tag photo.get_image, size: "200x200", format: "jpeg", fallback: "no-image.png" %>
+		  <%= image_tag photo.get_image, class: "index-img", format: "jpeg", fallback: "no-image.png" %>
 		<% end %>
 		<div class="col-2 mx-auto">
 		  <p><%= photo.name %></p>

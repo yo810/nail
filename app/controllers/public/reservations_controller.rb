@@ -8,7 +8,8 @@ class Public::ReservationsController < ApplicationController
   end
 
   def confirm
-    @reservation = Reservation.find(params[:menu_id])
+    #下記 params[:menu_id] → params[:id]に変更
+    @reservation = Reservation.find(params[:id])
     @menu = Menu.find(params[:menu_id])
   end
 
@@ -21,9 +22,8 @@ class Public::ReservationsController < ApplicationController
       @notification = Notification.new
       @notification.reservation_id = @reservation.id
       NotificationMailer.welcome_email(@reservation).deliver_later
-      redirect_to menu_confirm_path(params[:menu_id])
-      # 追加or質問
-
+      redirect_to menu_confirm_path(params[:menu_id], @reservation.id)
+      #上記 @reservation.id追加
     else
       render :new
     end
